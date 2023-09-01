@@ -7,6 +7,7 @@ Try running some of the following tasks:
 ```shell
 npx hardhat test
 npx hardhat run scripts/deploy.ts --network polygon
+npx hardhat verify 0x5F8B592bb1C66ce2cF740A90147ce27667162F50 --network polygon
 ```
 
 ### Deployments:

@@ -100,7 +100,8 @@ describe("AuditorContactsStore tests", function () {
         ],
         [
           ethers.encodeBytes32String("asimaranov"),
-        ]);
+        ]
+      );
 
       expect(ethers.decodeBytes32String(
         (
@@ -116,5 +117,24 @@ describe("AuditorContactsStore tests", function () {
         "asimaranov"
       );
     });
+
+    it("Empty contact fetching", async () => {
+      const { contactsStore, owner } = await loadFixture(deployFixture);
+
+      expect(ethers.decodeBytes32String(
+        (
+          await contactsStore.getContacts(
+            owner,
+            [
+              ethers.encodeBytes32String("telegram")
+            ]
+          )
+        )[0]
+      )
+      ).to.equal(
+        ""
+      );
+    });
+
   });
 });
