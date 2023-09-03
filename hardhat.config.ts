@@ -10,7 +10,7 @@ const config: HardhatUserConfig = {
   solidity: "0.8.19",
   networks: {
     polygon: {
-      url: "https://polygon-rpc.com/",
+      url: "https://polygon-mainnet.g.alchemy.com/v2/jGtKje8PmSzYD1f4DgXoS3FSp_cxbzR7",
       accounts: [process.env.PRIVATE_KEY!]
     }
   },

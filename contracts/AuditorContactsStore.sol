@@ -7,7 +7,7 @@ pragma solidity ^0.8.9;
 contract AuditorContactsStore {
     mapping(address => mapping(bytes32 => bytes32)) contacts;  // Auditor => social network name => username
 
-    event ConactSet(address indexed auditor, bytes32 indexed socialNetwork, bytes32 contact);
+    event ContactsSet(address indexed auditor, bytes32[] socialNetwork, bytes32[] contact);
 
     /// @notice Sets auditor contacts
     /// @param socialNetworks Social network names converted to bytes32
@@ -17,8 +17,9 @@ contract AuditorContactsStore {
         
         for (uint256 i = 0; i < contacts_.length; i++) {
             contacts[msg.sender][socialNetworks[i]] = contacts_[i];
-            emit ConactSet(msg.sender, socialNetworks[i], contacts_[i]);
         }
+
+        emit ContactsSet(msg.sender, socialNetworks, contacts_);
     }
 
     /// @notice Returns saved auditor contacts

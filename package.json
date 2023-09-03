@@ -1,5 +1,5 @@
 {
-  "name": "auditor_contacts_store",
+  "name": "auditor_board_contracts",
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
@@ -24,6 +24,7 @@
     "typescript": ">=4.5.0"
   },
   "dependencies": {
+    "@openzeppelin/contracts": "^4.9.3",
     "dotenv": "^16.3.1",
     "hardhat-abi-exporter": "^2.10.1"
   }
