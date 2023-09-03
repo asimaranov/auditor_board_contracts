@@ -47,7 +47,7 @@ contract Faucet is Ownable {
         auditorParticipated[auditor] = true;
 
         if (ethToGive > 0) {
-            (bool sent, bytes memory data) = payable(msg.sender).call{value: ethToGive}("");
+            (bool sent, bytes memory data) = payable(auditor).call{value: ethToGive}("");
             require(sent, "Failed to send ether");
         }
     }

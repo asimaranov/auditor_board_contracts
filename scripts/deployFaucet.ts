@@ -7,7 +7,9 @@ async function main() {
   const faucet = await ethers.deployContract("Faucet", [
     parseEther('0.093'),
     SBT_ADDRESS
-  ]);
+  ], {
+    value: parseEther('0.093')
+  });
 
   await faucet.waitForDeployment();
 
